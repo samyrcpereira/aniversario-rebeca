@@ -33,6 +33,8 @@
     bottom: -40px;
     font-size: 22px;
     opacity: 0;
+    color: #c084fc;
+    font-family: Arial, sans-serif;
     animation: floatHeart linear infinite;
 }
 
