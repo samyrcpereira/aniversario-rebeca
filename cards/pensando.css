@@ -369,6 +369,14 @@ h1 span {
     grid-column: span 7;
 }
 
+.pensamento-42 {
+    grid-column: span 5;
+}
+
+.pensamento-43 {
+    grid-column: span 13;
+}
+
 .num {
     font-family: "DM Serif Display", serif;
     font-size: 48px;
