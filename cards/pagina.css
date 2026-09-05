@@ -36,6 +36,7 @@
     color: #c084fc;
     font-family: Arial, sans-serif;
     animation: floatHeart linear infinite;
+    z-index: 0;
 }
 
 @keyframes appear {
