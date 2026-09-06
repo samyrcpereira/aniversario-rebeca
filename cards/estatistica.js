@@ -53,5 +53,48 @@ function contagemAniversario() {
     document.getElementById("semanas-bruto").innerText = semanas.toLocaleString("pt-BR");
 }
 
+
+
 contagemAniversario();
+
 const relogio = setInterval(contagemAniversario, 1000);
+const nascimento = new Date();
+
+function contadorProximoAniversario() {
+
+    const agora = new Date();
+    let proximoAniversario = new Date(agora.getFullYear(), 8, 5, 0, 0, 0);
+
+    // Se o aniversário deste ano já passou
+    // conta para o próximo ano
+    if (agora >= proximoAniversario) {
+        proximoAniversario = new Date(agora.getFullYear() + 1, 8, 5, 0, 0, 0);
+    }
+
+    const tempoRestante = proximoAniversario - agora;
+
+    const segundo = 1000;
+    const minuto = segundo * 60;
+    const hora = minuto * 60;
+    const dia = hora * 24;
+
+    let dias = Math.floor(tempoRestante / dia);
+    let horas = Math.floor((tempoRestante % dia) / hora );
+    let minutos = Math.floor((tempoRestante % hora) / minuto);
+    let segundos = Math.floor((tempoRestante % minuto) / segundo);
+
+
+    if (dias < 10) dias = "0" + dias;
+    if (horas < 10) horas = "0" + horas;
+    if (minutos < 10) minutos = "0" + minutos;
+    if (segundos < 10) segundos = "0" + segundos;
+
+    document.getElementById("dias-proximo").innerText = dias;
+    document.getElementById("horas-proximo").innerText = horas;
+    document.getElementById("minutos-proximo").innerText = minutos;
+    document.getElementById("segundos-proximo").innerText = segundos;
+}
+
+contadorProximoAniversario();
+
+setInterval(contadorProximoAniversario, 1000);
